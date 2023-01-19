@@ -2,9 +2,26 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",     /* Recommended React Native TSConfig base */
   "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig.json to read more about this file */
-
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@assets": [
+        "src/assets"
+      ],
+      "@components": [
+        "src/components"
+      ],
+      "@screens": [
+        "src/screens"
+      ],
+      "@utils": [
+        "src/utils"
+      ],
+    },
     /* Completeness */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   }
 }
+
+/* Visit https://aka.ms/tsconfig.json to read more about this file */
