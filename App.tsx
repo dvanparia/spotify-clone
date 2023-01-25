@@ -1,9 +1,9 @@
 import React from 'react';
-import { WelcomeScreen } from '@screens';
+import { Router } from '@navigation';
 
 const App = () => {
   return (
-    <WelcomeScreen />
+    <Router />
   );
 };
 
