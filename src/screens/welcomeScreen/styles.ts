@@ -30,5 +30,16 @@ export const styles = ScaledSheet.create({
     resizeMode: 'contain',
     alignSelf: 'center',
   },
-
+  buttonStyle: {
+    backgroundColor: Palette.primary,
+    borderRadius: '45@ms',
+    paddingVertical: '14@ms'
+  },
+  buttonTitleStyle: {
+    color: Palette.white,
+    fontWeight: '500',
+    fontSize: '24@ms',
+    lineHeight: '36@ms',
+    textAlign: 'center'
+  }
 });

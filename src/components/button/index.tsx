@@ -1,17 +1,16 @@
 import React from "react";
-import { Pressable, PressableProps, Text, } from "react-native";
+import { Pressable, PressableProps, StyleProp, Text, TextStyle, } from "react-native";
 import { styles } from "./styles";
 
 export const Button = (props: ButtonProps): JSX.Element => {
 
-  const { title } = props;
+  const { title, titleStyle } = props;
 
   return (
-    <Pressable
-      style={styles.container}
-      {...props}
-    >
-      <Text style={styles.titleTextStyle}>
+    <Pressable {...props}>
+      <Text
+        style={titleStyle}
+      >
         {title}
       </Text>
     </Pressable>
@@ -20,4 +19,5 @@ export const Button = (props: ButtonProps): JSX.Element => {
 
 interface ButtonProps extends PressableProps {
   title: string;
+  titleStyle?: StyleProp<TextStyle>;
 }

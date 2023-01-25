@@ -3,9 +3,13 @@ import { images } from '@assets';
 import { Button } from '@components';
 import { Image, ImageBackground, Text, View } from 'react-native';
 import { styles } from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { AuthStackNavigationProp } from 'src/navigation/types';
 
 
 export const WelcomeScreen = (props: WelcomeScreenProps): JSX.Element => {
+
+  const navigation = useNavigation<AuthStackNavigationProp>();
 
   return (
     <ImageBackground
@@ -26,7 +30,9 @@ export const WelcomeScreen = (props: WelcomeScreenProps): JSX.Element => {
           </Text>
           <Button
             title={'Get Started'}
-            onPress={() => { }}
+            style={styles.buttonStyle}
+            titleStyle={styles.buttonTitleStyle}
+            onPress={() => navigation.navigate('GetStarted')}
           />
         </View>
       </View>
