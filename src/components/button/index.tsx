@@ -1,18 +1,26 @@
-import React from "react";
-import { Pressable, PressableProps, StyleProp, Text, TextStyle, } from "react-native";
+import React, { ReactNode } from "react";
+import { Pressable, PressableProps, StyleProp, Text, TextStyle, View, } from "react-native";
 import { styles } from "./styles";
 
 export const Button = (props: ButtonProps): JSX.Element => {
 
-  const { title, titleStyle } = props;
+  const { title, titleStyle, iconLeft, iconRight } = props;
 
   return (
     <Pressable {...props}>
-      <Text
-        style={titleStyle}
-      >
-        {title}
-      </Text>
+      <View style={styles.innerContainer}>
+        <View style={styles.iconLeftContainer}>
+          {iconLeft}
+        </View>
+        <Text
+          style={titleStyle}
+        >
+          {title}
+        </Text>
+        <View style={styles.iconRightContainer}>
+          {iconRight}
+        </View>
+      </View>
     </Pressable>
   )
 }
@@ -20,4 +28,6 @@ export const Button = (props: ButtonProps): JSX.Element => {
 interface ButtonProps extends PressableProps {
   title: string;
   titleStyle?: StyleProp<TextStyle>;
+  iconLeft?: ReactNode;
+  iconRight?: ReactNode;
 }
